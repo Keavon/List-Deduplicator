@@ -7,6 +7,8 @@ Useful for removing dupliate addresses from two mailing lists.
 
 To use, simply [download the ZIP](https://github.com/Keavon/Two-List-Duplicate-Remover/archive/master.zip) and open index.html. Paste your primary list in the left column and your list with duplicates in the right column and hit *Remove Duplicates*.
 
+![Screenshot of the application](screenshot.png)
+
 For example, in the list below, the bolded entries will be removed when hitting *Remove Duplicates* because they also exist in the primary list.
 
 Primary List | Secondary List
