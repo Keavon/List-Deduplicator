@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Multiple List Duplicate Removal Tool</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+	<link href="style.css" rel="stylesheet" />
+	<script src="javascript.js"></script>
+</head>
+<body>
+	<div>
+		<div id="content">
+			<header>
+				<h1>Multiple List Duplicate Removal Tool</h1>
+				<p id="status" class="green">0 removed</p>
+			</header>
+			<div id="input">
+				<div><textarea id="keep" placeholder="Main list"></textarea></div><div><textarea id="remove" placeholder="Secondary list to be modified"></textarea></div>
+			</div>
+			<div id="controls">
+				<div><button onclick="go(true);" class="green">Remove Duplicates</button></div><div><button onclick="go(false);" class="green">Remove Unique</button></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
