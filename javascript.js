@@ -1,5 +1,5 @@
 ﻿function go(process) {
-	// Get
+	// Get input
 	var keep = document.getElementById("keep").value.toLowerCase().split("\n");
 	var remove = document.getElementById("remove").value.toLowerCase().split("\n");
 	var kept = [];
@@ -39,4 +39,8 @@
 		document.getElementById("remove").value = kept.join("\n");
 		document.getElementById("status").innerHTML = initial - kept.length + " removed";
 	}
+	document.getElementById("status").className = "";
+	setTimeout(function () {
+		document.getElementById("status").className = "hidden";
+	}, 5000);
 }

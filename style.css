@@ -59,6 +59,14 @@ header {
 		font-weight: 300;
 		text-align: center;
 		margin: 0;
+		overflow:hidden;
+		height:34px;
+		transition:height 0.25s;
+	}
+
+	header #status.hidden {
+		height:0;
+		transition:height 0.25s;
 	}
 
 /* Input Boxes */
