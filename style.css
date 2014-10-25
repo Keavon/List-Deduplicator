@@ -1,4 +1,5 @@
-﻿@font-face {
+﻿/* Fonts */
+@font-face {
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 300;
@@ -43,30 +44,28 @@ html, body {
 			}
 
 /* Header */
-header {
+h1 {
+	font-size: 48px;
+	font-weight: 300;
+	margin: 25px 0;
+	text-align: center;
+}
+
+header #status {
+	font-size: 24px;
+	font-weight: 300;
+	text-align: center;
+	margin: 0;
+	overflow: hidden;
+	height: 34px;
+	transition: height 0.25s, margin-bottom 0.25s;
 	margin-bottom: 10px;
 }
 
-	header h1 {
-		font-size: 48px;
-		font-weight: 300;
-		margin: 25px 0;
-		text-align: center;
-	}
-
-	header #status {
-		font-size: 24px;
-		font-weight: 300;
-		text-align: center;
-		margin: 0;
-		overflow:hidden;
-		height:34px;
-		transition:height 0.25s;
-	}
-
 	header #status.hidden {
-		height:0;
-		transition:height 0.25s;
+		height: 0;
+		margin-bottom: 0;
+		transition: height 0.25s, margin-bottom 0.25s;
 	}
 
 /* Input Boxes */
@@ -151,4 +150,40 @@ button {
 #page > #controls,
 #page > footer {
 	margin: 10px 0;
+}
+
+/* Responsive Sizing */
+@media all and (max-width: 825px) {
+	header h1 {
+		font-size: 36px;
+		margin: 20px 0;
+	}
+
+	#controls > div button {
+		font-size: 24px;
+	}
+}
+
+@media all and (max-width: 650px) {
+	header h1 {
+		font-size: 28px;
+		margin: 10px 0;
+	}
+
+	#controls > div button {
+		font-size: 18px;
+		padding: 5px;
+	}
+}
+
+@media all and (max-width: 500px) {
+	header h1 {
+		white-space: pre-line;
+	}
+}
+
+@media all and (max-width: 400px) {
+	#controls > div button {
+		white-space: pre-line;
+	}
 }
