@@ -3,7 +3,7 @@ Multiple List Duplicate Removal Tool
 
 Simple app written in JavaScript to remove duplicate lines on a second list from a first list. It's useful for removing dupliate addresses from two mailing lists.
 
-[Visit the app](http://keavon.github.io/Two-List-Duplicate-Remover/) and paste your primary list in the left column and your list with duplicates in the right column then hit *Remove Duplicates*.
+[Visit the app](http://keavon.github.io/Multiple-List-Duplicate-Removal-Tool) and paste your primary list in the left column and your list with duplicates in the right column then hit *Remove Duplicates*.
 
 ![Screenshot of the application](screenshot.png)
 
