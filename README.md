@@ -5,7 +5,7 @@ Simple app written in JavaScript to remove duplicate lines on a second list from
 
 [Visit the app](http://keavon.github.io/Multiple-List-Duplicate-Removal-Tool) and paste your primary list in the left column and your list with duplicates in the right column then hit *Remove Duplicates*.
 
-![Screenshot of the application](screenshot.png)
+[![Screenshot of the application](screenshot.png)](http://keavon.github.io/Multiple-List-Duplicate-Removal-Tool)
 
 For example, in the list below, the bolded entries will be removed when hitting *Remove Duplicates* because they also exist in the primary list.
 
