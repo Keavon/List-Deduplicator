@@ -1,32 +1,33 @@
-﻿<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+﻿<!doctype html>
+<html>
 <head>
-    <meta charset="utf-8" />
-    <title>Multiple List Duplicate Removal Tool</title>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-	<link href="style.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <title>List Deduplicator</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="style.css" rel="stylesheet">
 	<script src="javascript.js"></script>
 </head>
 <body>
-	<div>
-		<div id="page">
-			<header>
-				<h1>Multiple List Duplicate
-Removal Tool</h1>
-				<p id="status" class="hidden">0 removed</p>
-			</header>
-			<div id="input">
-				<div><textarea id="keep" placeholder="Main list"></textarea></div><div><textarea id="remove" placeholder="Secondary list to be modified"></textarea></div>
-			</div>
-			<div id="controls">
-				<div><button onclick="go(true);">Remove 
-Duplicates</button></div><div><button onclick="go(false);">Remove 
-Unique</button></div>
-			</div>
-			<footer>
-				<a href="https://github.com/Keavon/Multiple-List-Duplicate-Removal-Tool"><img src="github.png" /></a>
-			</footer>
+	<span id="snackbar">0 lines removed</span>
+	<header>
+		<h1>List Deduplicator</h1>
+	</header>
+	<main>
+		<div class="titles">
+			<span>Primary list</span><span>Secondary list</span>
 		</div>
-	</div>
+		<div class="textareas">
+			<textarea id="primary" placeholder="This list is referenced for shared duplicates but isn't modified"></textarea>
+			<textarea id="secondary" placeholder="Each line identical in the primary list gets removed from here"></textarea>
+		</div>
+		<div class="buttons">
+			<button id="remove-non-duplicates">Remove non-duplicates</button>
+			<button id="remove-duplicates">Remove duplicates</button>
+		</div>
+	</main>
+	<footer>
+		<span>Made with &hearts; by <a href="https://keavon.com">Keavon Chambers</a>. View source on <a href="https://github.com/Keavon/List-Deduplicator">GitHub</a>.</span>
+	</footer>
 </body>
 </html>
