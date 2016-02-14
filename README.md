@@ -13,6 +13,6 @@ Primary List | Secondary List
 ------------ | --------------
 andy<span></span>@example.com<br />bill<span></span>@example.com<br />cindy<span></span>@example.com<br />dan<span></span>@example.com<br />emily<span></span>@example.com | **bill<span></span>@example.com**<br />**emily<span></span>@example.com**<br />xavier<span></span>@example.com<br />yan<span></span>@example.com<br />zaroff<span></span>@example.com
 
-There is also a *Remove Unique* button that will remove all *except* the duplicates.
+There is also a *Remove Non-duplicates* button that will remove all *except* the duplicates.
 
 Pull requests are welcome.
