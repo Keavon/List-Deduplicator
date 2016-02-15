@@ -1,62 +1,56 @@
+// Bind click event to buttons
 document.addEventListener("DOMContentLoaded", function() {
-	document.getElementById("remove-duplicates").addEventListener("click", function() { go(true); });
-	document.getElementById("remove-non-duplicates").addEventListener("click", function() { go(false); });
+	document.getElementById("remove-duplicates").addEventListener("click", function() { dedupe(true); });
+	document.getElementById("remove-non-duplicates").addEventListener("click", function() { dedupe(false); });
 }, false);
 
-var timer;
-
-function go(process) {
+// Remove duplicates or non-duplicates from the secondary list
+function dedupe(dupes) {
+	// Notify and terminate if the secondary list is empty
+	if (document.getElementById("secondary").value === "") {
+		notify(0);
+		return;
+	}
+	
 	// Get input
-	var keep = document.getElementById("primary").value.toLowerCase().split("\n");
-	var remove = document.getElementById("secondary").value.toLowerCase().split("\n");
-	var kept = [];
-	var initial = remove.length;
-	var seen = {};
+	var primary = document.getElementById("primary").value.toLowerCase().split("\n");
+	var secondary = document.getElementById("secondary").value.toLowerCase().split("\n");
 	
-	// Sanitize
-	for (var item1 in keep) {
-		keep[item1] = keep[item1].replace(/\s/g, "");
-	}
-	for (var item2 in remove) {
-		remove[item2] = remove[item2].replace(/\s/g, "");
-	}
+	// Throw out preceding and succeeding whitespace
+	var trim = function(x) { return x.trim(); };
+	primary = primary.map(trim);
+	secondary = secondary.map(trim);
 	
-	remove = remove.filter(function (item) {
-		return seen.hasOwnProperty(item) ? false : (seen[item] = true);
-	});
+	// Specify the difference and intersection filter functions
+	var filterDupes = function(x) { return primary.indexOf(x) === -1; };
+	var filterNonDupes = function(x) { return primary.indexOf(x) !== -1; };
 	
-	// Go through each line of keep
-	for (var item in keep) {
-		// Checks if the current line exists in the other list
-		if (remove.indexOf(keep[item]) !== -1) {
-			if (process) {
-				// Removes it from the list
-				remove.splice(remove.indexOf(keep[item]), 1);
-			} else {
-				// Adds it to the other list
-				kept.push(keep[item]);
-			}
-		}
-	}
+	// Filter the list and show the result
+	if (dupes) { result(secondary.filter(filterDupes), secondary); }
+	else { result(secondary.filter(filterNonDupes), secondary); }
+}
+
+// Update the secondary list with the new list and notify about the removed lines
+function result(newList, secondary) {
+	document.getElementById("secondary").value = newList.join("\n");
+	notify(secondary.length - newList.length);
+}
+
+// Create a notification with the specified number of lines removed
+function notify(count) {
+	// Select snackbar element
+	var snackbar = document.getElementById("snackbar");
 	
-	var s = "s";
-		
-	if (process) {
-		document.getElementById("secondary").value = remove.join("\n");
-		if (initial - remove.length === 1) {
-			s = "";
-		}
-		document.getElementById("snackbar").innerHTML = initial - remove.length + " line" + s + " removed";
-	} else {
-		document.getElementById("secondary").value = kept.join("\n");
-		if (initial - kept.length === 1) {
-			s = "";
-		}
-		document.getElementById("snackbar").innerHTML = initial - kept.length + " line" + s + " removed";
-	}
-	document.getElementById("snackbar").className = "visible";
+	// Update count and make it visible
+	snackbar.innerHTML = count + " line" + (count === 1 ? "" : "s") + " removed";
+	snackbar.className = "visible";
+	
+	// Clear and set timer to hide element
 	clearTimeout(timer);
 	timer = setTimeout(function () {
 		document.getElementById("snackbar").className = "";
 	}, 10000);
 }
+
+// Stored toast visibility timer
+var timer;
