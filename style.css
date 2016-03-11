@@ -33,13 +33,13 @@ main {
 	flex-direction: column;
 	background: #fff;
 	width: auto;
-	width: calc(100% - 50px);
+	width: 100%;
 	max-width: 1000px;
 	border-radius: 2px;
 	margin: auto;
 	margin-top: -64px;
 	height: 500px;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
 	min-height: 250px;
 }
 
@@ -147,6 +147,35 @@ footer span .heart {
 	transition: bottom 0.3s ease-out;
 }
 
+@media (max-width: 1000px) {
+	main {
+		border-radius: 0;
+	}
+}
+
+@media (orientation: landscape) and (max-width: 840px) {
+	header {
+		height: 96px;
+	}
+	
+	header h1 {
+		line-height: 48px;
+	}
+	
+	main {
+		margin-top: -48px;
+	}
+	
+	main .titles {
+		height: 48px;
+	}
+	
+	main .titles span {
+		height: 48px;
+		line-height: 48px;
+	}
+}
+
 @media (orientation: portrait) and (max-width: 480px) {
 	header {
 		height: 112px;
@@ -168,31 +197,10 @@ footer span .heart {
 		height: 56px;
 		line-height: 56px;
 	}
-	
-	main .buttons button {
-		padding: 0;
-	}
 }
 
-@media (orientation: landscape) and (max-width: 840px) {
-	header {
-		height: 96px;
-	}
-	
-	header h1 {
-		line-height: 48px;
-	}
-
-	main {
-		margin-top: -48px;
-	}
-
-	main .titles {
-		height: 48px;
-	}
-
-	main .titles span {
-		height: 48px;
-		line-height: 48px;
+@media (max-width: 380px) {
+	main .buttons button {
+		padding: 0;
 	}
 }
